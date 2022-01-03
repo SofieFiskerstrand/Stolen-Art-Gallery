@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>secret art gallery</title>
+	</head>
+	<body>
+		<header>
+    <button class="button"><a href="#collection">Collection</a></button>
+		  <section>
+		    <%= image_tag('logo.png', class: "logo") %>
+		  </section>
+
+		  <div class="about">
+		    <p>Stolen. Sold. Stuffed in a vault.</p>
+		    <p>This is the tragic story of some of the greatest works of art.
+		      Lost to the world forever, likely to never see the light of day again.</p>
+		    <p>The Stolen Art Gallery is a conceptual collection of some of these pieces, re-worked as NFTs so that they can exist on the blockchain forever.</p>
+		    <p>Giving some of the lost works of the past, a new future.</p>
+		  </div>
+		</header>
+
+    <div class="photos" id="collection">
+      <% @art.each do |art| %>
+        <a href="<%= art_path(art) %>">
+          <%= image_tag "#{art.image}" %>
+        </a>
+      <% end %>
+    </div>
+	</body>
+</html>

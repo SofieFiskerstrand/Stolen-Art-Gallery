@@ -1,0 +1,19 @@
+<div class="showpage">
+  <div class="imagebox">
+    <%= image_tag "#{@art.image}", class: "art-piece"%>
+  </div>
+  <div class="art-info">
+    <h2>'<%= @art.name %>'</h2>
+    <h2><%= @art.artist %></h2>
+    <p class="info-text"><%= @art.info %></p>
+    <div class="facts">
+      <p><span class="margin-right">Stolen:</span> <%= @art.stolen %></p>
+      <p><span class="margin-right">Value:</span> <%= @art.value %></p>
+      <p><span class="margin-right">Reward:</span> <%= @art.reward %></p>
+    </div>
+      <div>
+        <dfn data-info="coming soon" class="buybtn" id="buynow"><i class="fas fa-chevron-down arrow"></i>buy now</dfn>
+      </div>
+  </div>
+  <%= link_to "Collection", root_path, class: "button", id: "show-button" %>
+</div>
